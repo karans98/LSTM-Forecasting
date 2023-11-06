@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <center><img src="https://mma.prnewswire.com/media/1309683/Fetch_Rewards_Logo.jpg?p=facebook" alt="Fetch_Rewards_Logo" width="200" height="100">
+
+    <h2>Welcome to Fetch Rewards</h2>
+    <br>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    {% if show_heading %}
+
+    <h3><form method="POST" action="/forecast_2022">
+        <input type="submit" value="Click to view 2022 forecast ">
+        <br>
+    </form></h3>
+
+    <h4>The mean absolute prediction error (mape) in this forecasting model is about {{output}} % </h4>
+
+    {% endif %}
+
+    <div id="plotly-graph"></div>
+    <script type="text/javascript">
+        var graphData = {{ graphJSON1|safe}};
+        Plotly.newPlot('plotly-graph', graphData);
+    </script>
+    </center>
+
+    {% if show_line %}
+    <div style="width: 30%; float: left;">
+        <h3>The predicted number of scanned receipts in 2022</h3>
+        {{ table|safe}}
+    </div>
+    
+    <div style="width: 70%; float: right;">
+        <div id="plotly-chart"></div>
+    </div>
+    
+    <script type="text/javascript">
+        var plotData = {{ graphJSON2 | safe }};
+        Plotly.newPlot('plotly-chart', plotData);
+    </script>
+    
+    {% endif %}
+  
+</body>
+</html>
