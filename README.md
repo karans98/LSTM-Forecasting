@@ -28,7 +28,7 @@ A time series generator organizes our data into sequences based on the chosen la
 
 Once compiled with an appropriate loss function and adam optimizer, the LSTM is trained on the processed data. The trained model is then saved and predictions are made.
 
-### About the application - 
+## About the application - 
 
 1. The main page displays the actual vs. forecasted receipt counts for Oct 2021 - Dec 2021 and provides a Mean Absolute Percentage Error (MAPE) for the forecasted values. This page also provides an interactive visualization (using plotly).
 
@@ -47,7 +47,7 @@ Once compiled with an appropriate loss function and adam optimizer, the LSTM is 
     2. Once cloning is complete, navigate to the cloned repository :[cd LSTM_Forecasting]
     3. Install the Python libraries mentioned in the requirements.txt file :[pip install -r requirements.txt]
     4. Run the Python file :[python app.py]
-    5. Click the link and view the results
+    5. Click the link to view the web application
 
 ### Important Notes - 
 
